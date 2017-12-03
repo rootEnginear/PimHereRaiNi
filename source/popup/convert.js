@@ -7,21 +7,21 @@ let bgpage = chrome.extension.getBackgroundPage();
 let input = bgpage.word;
 let newText = "";
 
-// If there are any Latin characters in it
-if(latinCh.test(input)){
-    // T: EN -> TH
-    for (let i = 0; i < input.length; i++) {
-        if (engKey.indexOf(input[i]) != -1) {
-            newText += thaiKey[engKey.indexOf(input[i])];
-        } else {
-            newText += input[i];
-        }
-    }
-}else if(thaiCh.test(input)){
+// If there are any Thai characters in it
+if (thaiCh.test(input)) {
     // T: TH -> EN
     for (let i = 0; i < input.length; i++) {
         if (thaiKey.indexOf(input[i]) != -1) {
             newText += engKey[thaiKey.indexOf(input[i])];
+        } else {
+            newText += input[i];
+        }
+    }
+} else if (latinCh.test(input)) {
+    // T: EN -> TH
+    for (let i = 0; i < input.length; i++) {
+        if (engKey.indexOf(input[i]) != -1) {
+            newText += thaiKey[engKey.indexOf(input[i])];
         } else {
             newText += input[i];
         }
