@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "PimHereRaiNi",
+    "version":"2.0",
+    "description": "Decode a message that was forgotten switching between TH/EN keyboard",
+    "background":{
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "permissions": [
+        "contextMenus"
+    ]
+}
